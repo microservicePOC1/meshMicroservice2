@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: sample-service
+environment:
+   servername: ${SERVERNAME}
+   dbport: ${DBPORT}
+   username: ${USERNAME}
+   password: ${PASSWORD}
+   dbname: ${DBNAME}
