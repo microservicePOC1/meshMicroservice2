@@ -13,7 +13,7 @@ public class SampleApplication {
 	@Autowired
     	private Environment environment;
 
-    	private final Logger log = LoggerFactory.getLogger(Config.class);
+    	private final Logger log = LoggerFactory.getLogger(SampleApplication.class);
 
 	public static void main(String[] args) {
 		String serverName = environment.getProperty("environment.servername");
