@@ -19,7 +19,7 @@ public class SampleController {
     public String sampleApi() throws InterruptedException, IllegalArgumentException {
         String keyVaultName = System.getenv("KEY_VAULT_NAME");
         //secret start
-        String keyVaultUri = "https://" + keyVaultName + ".vault.azure.net";
+        String keyVaultUri = "https://" + keyVaultName + ".vault.usgovcloudapi.net/";
 
         System.out.printf("key vault name = %s and key vault URI = %s \n", keyVaultName, keyVaultUri);
 
