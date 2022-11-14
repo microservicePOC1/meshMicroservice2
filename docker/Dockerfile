@@ -16,7 +16,7 @@ WORKDIR /build
 
 # Build dependency offline to streamline build
 COPY pom.xml .
-RUN mvn dependency
+RUN mvn dependency:go-offline
 
 COPY src src
 RUN mvn package -Dmaven.test.skip=true
