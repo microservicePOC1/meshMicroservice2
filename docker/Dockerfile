@@ -22,6 +22,6 @@ COPY src src
 RUN mvn package -Dmaven.test.skip=true
 
 FROM openjdk:11-jdk
-COPY --from=0 /build/target/sampleService2.jar /app/target/meshMicroservice2.jar
+COPY --from=0 /build/target/meshMicroservice2.jar /app/target/meshMicroservice2.jar
 EXPOSE 8080
 ENTRYPOINT [ "java", "-jar", "/app/target/meshMicroservice2.jar"]
