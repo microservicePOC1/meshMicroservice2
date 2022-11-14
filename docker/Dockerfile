@@ -12,7 +12,6 @@
 ####
 FROM quay.io/devfile/maven:3.8.1-openjdk-17-slim
 
-WORKDIR /build
 
 # Build dependency offline to streamline build
 COPY pom.xml .
