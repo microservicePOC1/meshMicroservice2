@@ -79,7 +79,7 @@
                 </executions>
             </plugin>
         </plugins>
-        <finalName>sampleService2</finalName>
+        <finalName>meshMicroservice2</finalName>
     </build>
 
 </project>
