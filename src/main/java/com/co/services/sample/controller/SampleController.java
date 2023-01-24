@@ -17,7 +17,11 @@ public class SampleController {
     @Value("${connectionString3}")
     private String connectionString3;
 
+    @GetMapping("/")
+    public String sampleApi() throws InterruptedException, IllegalArgumentException {
 
+        return "Hello Sample Microservice 2";
+    }
     
     @GetMapping("get")
     public String get() {
