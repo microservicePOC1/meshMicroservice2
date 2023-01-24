@@ -43,7 +43,7 @@ public class SampleController {
         
         
     @GetMapping("original")
-    public String get2() {
+    public String original() {
         return connectionStringOrignal;
     }
     
