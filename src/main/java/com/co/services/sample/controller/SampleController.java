@@ -1,52 +1,58 @@
 package com.co.services.sample.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import java.io.Console;
 
 import org.springframework.beans.factory.annotation.Value;
 
-
 @RestController
 public class SampleController {
-    @Value("${connectionString}")
-    private String connectionString;
-    
-        @Value("${connectionString2}")
-    private String connectionString2;
-    
-        @Value("${connectionString3}")
-    private String connectionStringNew;
-    
-    
-            @Value("${NGF-DB-user}")
-    private String connectionStringOrignal;
 
-    
-    @GetMapping("get")
-    public String get() {
-        return connectionString;
-    }
-    
-        
-    @GetMapping("get1")
-    public String get1() {
-        return connectionString2;
-    }
-    
-        
-    @GetMapping("get2")
-    public String get2() {
-        return connectionStringNew;
-    }
-    
-        
-        
-    @GetMapping("original")
-    public String original() {
-        return connectionStringOrignal;
-    }
-    
-    
-    
+	@Value("${NGF-DB-user}")
+	private String credsNgf;
+
+	@Value("${connectionString}")
+	private String credsAmcis;
+
+	@Value("${connectionString2}")
+	private String credsSpanas;
+
+
+
+	@GetMapping("get1")
+	public String get1() {
+		return credsSpanas;
+	}
+
+	@GetMapping("get2")
+	public String get2() {
+		return credsAmcis;
+	}
+
+	@GetMapping("original")
+	public String original() {
+		return credsNgf;
+	}
+
+	
+	@RequestMapping(value="creds", method = RequestMethod.GET)
+	public @ResponseBody String getItem(@RequestParam("db") String dbRequested){
+
+	   switch(dbRequested) {
+	   case("ngf"):
+		   return credsNgf;
+	   case("amcis"):
+		   return credsAmcis;
+	   case("spanas"):
+		   return credsSpanas;
+	   	default:
+	   		return new String("");
+	   }
+		   
+	}
 }
