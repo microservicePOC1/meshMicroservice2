@@ -1,6 +1,5 @@
-package com.co.services.sample.controller;
+package com.service.keyvault.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Value;
 
 @RestController
-public class SampleController {
+public class KeyVaultController {
 
 	@Value("${NGF-DB-user}")
 	private String credsNgf;
