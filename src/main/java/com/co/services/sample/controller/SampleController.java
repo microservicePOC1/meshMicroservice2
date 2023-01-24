@@ -22,23 +22,6 @@ public class SampleController {
 	@Value("${connectionString2}")
 	private String credsSpanas;
 
-
-
-	@GetMapping("get1")
-	public String get1() {
-		return credsSpanas;
-	}
-
-	@GetMapping("get2")
-	public String get2() {
-		return credsAmcis;
-	}
-
-	@GetMapping("original")
-	public String original() {
-		return credsNgf;
-	}
-
 	
 	@RequestMapping(value="creds", method = RequestMethod.GET)
 	public @ResponseBody String getItem(@RequestParam("db") String dbRequested){
