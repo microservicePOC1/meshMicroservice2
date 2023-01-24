@@ -27,13 +27,13 @@ public class KeyVaultController {
         
     @GetMapping("get1")
     public String get() {
-        return connectionString;
+        return connectionString2;
     }
     
         
     @GetMapping("get2")
     public String get() {
-        return connectionString;
+        return connectionString3;
     }
     
 }
