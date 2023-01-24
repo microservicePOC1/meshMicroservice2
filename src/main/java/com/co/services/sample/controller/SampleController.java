@@ -25,19 +25,8 @@ public class SampleController {
     
     @GetMapping("get")
     public String get() {
-        return connectionString;
-    }
-    
-        
-    @GetMapping("get1")
-    public String get1() {
         return connectionString2;
     }
-    
-        
-    @GetMapping("get2")
-    public String get2() {
-        return connectionString3;
-    }
+
     
 }
