@@ -12,15 +12,41 @@ public class SampleController {
     @Value("${connectionString}")
     private String connectionString;
     
-    @GetMapping("/")
-    public String sampleApi() throws InterruptedException, IllegalArgumentException {
-        
-        return "Hello Sample Microservice 2";
-    }
+        @Value("${connectionString2}")
+    private String connectionString2;
+    
+        @Value("${connectionString3}")
+    private String connectionStringNew;
+    
+    
+            @Value("${NGF-DB-user}")
+    private String connectionStringOrignal;
+
     
     @GetMapping("get")
     public String get() {
         return connectionString;
     }
+    
+        
+    @GetMapping("get1")
+    public String get1() {
+        return connectionString2;
+    }
+    
+        
+    @GetMapping("get2")
+    public String get2() {
+        return connectionStringNew;
+    }
+    
+        
+        
+    @GetMapping("original")
+    public String get2() {
+        return connectionStringOrignal;
+    }
+    
+    
     
 }
