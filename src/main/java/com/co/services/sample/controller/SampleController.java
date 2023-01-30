@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.beans.factory.annotation.Value;
 
 @RestController
-public class KeyVaultController {
+public class SampleController {
 
 	@Value("${NGF-DB-user}")
 	private String credsNgf;
