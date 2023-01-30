@@ -1,4 +1,4 @@
-package com.services.sample.controller;
+package com.co.services.sample.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
