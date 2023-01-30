@@ -36,4 +36,11 @@ public class KeyVaultController {
 	   }
 		   
 	}
+		@GetMapping("/trial")
+	    public String trial() {
+
+
+	        
+	        return new String("Response from api");
+	    }
 }
