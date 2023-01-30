@@ -1,82 +1,90 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.1</version>
-        <relativePath />
+        <version>2.7.7</version>
+        <relativePath/>
     </parent>
+    <!-- Microservice information -->
     <artifactId>sample-service</artifactId>
     <groupId>com.co.services</groupId>
     <version>1.2-SNAPSHOT</version>
-
+	
     <properties>
         <java.version>1.8</java.version>
-	<version.spring.cloud.azure>4.4.0</version.spring.cloud.azure>
-
+        <version.spring.cloud.azure>4.4.0</version.spring.cloud.azure>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${project.parent.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.yaml</groupId>
+                    <artifactId>snakeyaml</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-webmvc-core</artifactId>
             <version>1.5.13</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.yaml</groupId>
+                    <artifactId>snakeyaml</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>${project.parent.version}</version>
             <scope>test</scope>
         </dependency>
-     	<dependency>
-	    <groupId>com.azure.spring</groupId>
+        <dependency>
+            <groupId>com.azure.spring</groupId>
             <artifactId>spring-cloud-azure-starter-keyvault-secrets</artifactId>
-     	</dependency>
-
+            <version>5.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.woodstox</groupId>
+            <artifactId>woodstox-core</artifactId>
+            <version>6.4.0</version>
+        </dependency>
     </dependencies>
-	<dependencyManagement>
-	     <dependencies>
-		 <dependency>
-		     <groupId>com.azure.spring</groupId>
-		     <artifactId>spring-cloud-azure-dependencies</artifactId>
-		     <version>${version.spring.cloud.azure}</version>
-		     <type>pom</type>
-		     <scope>import</scope>
-		 </dependency>
-	     </dependencies>
-	</dependencyManagement> 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.azure.spring</groupId>
+                <artifactId>spring-cloud-azure-dependencies</artifactId>
+                <version>${version.spring.cloud.azure}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.7</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <version>${project.parent.version}</version>
             </plugin>
         </plugins>
         <finalName>meshMicroservice2</finalName>
